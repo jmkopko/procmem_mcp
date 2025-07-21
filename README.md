@@ -1,6 +1,6 @@
 # MCP Procedural Memory Manager
 
-A Model Context Protocol (MCP) server and web client for extracting, storing, and scheduling review of procedural skills using spaced repetition algorithms. This project helps users convert knowledge from Claude conversations into actionable, reviewable procedures with minimal planning.  It facilitates optimized scheduling of procedure practice and interleaving of different skills for practice.
+A Model Context Protocol (MCP) server and web client for extracting, storing, and scheduling review of procedural skills using spaced repetition algorithms. This project helps users convert knowledge from Claude conversations into actionable, reviewable procedures with minimal planning.  It facilitates optimized scheduling and interleaving during practice.
 
 **Current Status**: Simplified implementation focused on simulating skill extraction and an example interface for skill repetition. Full integration between MCP server and web app requires future development.
 
