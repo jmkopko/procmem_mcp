@@ -2,15 +2,20 @@
 
 A Model Context Protocol (MCP) server and web client for extracting, storing, and reviewing procedural skills using spaced repetition algorithms. This project helps users convert knowledge from Claude conversations into actionable, reviewable procedures.
 
+**Current Status**: Simplified implementation focused on skill extraction. Full spaced repetition features are planned for future development.
+
 ## Features
 
+### Current Implementation
 - **Skill Extraction**: Automatically extract procedural steps from Claude chat conversations using NLP pattern matching
+
+### Planned Features (Future Work)
 - **Spaced Repetition**: Two research-based algorithms for optimal retention:
   - Motor Skills Algorithm (for physical/motor procedures)
   - Cognitive Procedures Algorithm (for mental/cognitive tasks)
 - **Web Interface**: User-friendly GUI for managing procedures
-- **MCP Integration**: Full MCP server implementation with tools and resources
 - **Review Management**: Track and complete reviews based on scientifically-proven schedules
+- **Procedure Storage**: Save and organize extracted procedures
 
 ## Project Structure
 
@@ -99,18 +104,24 @@ Add to your Claude Desktop configuration (`config.json`):
 
 ## MCP Tools
 
-The server exposes the following tools:
+### Current Implementation
 
-### `extract_skills`
+The server currently exposes one working tool:
+
+#### `extract_skills`
 Extract procedural steps from chat content.
 
 **Parameters:**
 - `content` (string): The chat content to analyze
 - `refinementPrompt` (string, optional): Additional instructions for extraction
 
-**Returns:** Array of extracted steps
+**Returns:** JSON object with extracted steps array and success status
 
-### `save_procedure`
+### Planned Tools (Future Work)
+
+The following tools will be implemented in future versions:
+
+#### `save_procedure`
 Save a procedure with scheduling algorithm.
 
 **Parameters:**
@@ -120,7 +131,7 @@ Save a procedure with scheduling algorithm.
 
 **Returns:** Saved procedure details
 
-### `get_review_queue`
+#### `get_review_queue`
 Get procedures scheduled for review on a specific date.
 
 **Parameters:**
@@ -128,7 +139,7 @@ Get procedures scheduled for review on a specific date.
 
 **Returns:** List of procedures to review
 
-### `mark_reviewed`
+#### `mark_reviewed`
 Mark a scheduled review as completed.
 
 **Parameters:**
@@ -137,7 +148,7 @@ Mark a scheduled review as completed.
 
 **Returns:** Updated procedure status
 
-### `delay_review`
+#### `delay_review`
 Delay a review by one day.
 
 **Parameters:**
@@ -146,7 +157,7 @@ Delay a review by one day.
 
 **Returns:** New review date
 
-## MCP Resources
+## MCP Resources (Planned)
 
 ### `procedures://list`
 Get all saved procedures with summary information.
@@ -154,7 +165,7 @@ Get all saved procedures with summary information.
 ### `procedures://{procedureId}`
 Get detailed information about a specific procedure.
 
-## Algorithm Details
+## Algorithm Details (Planned)
 
 ### Motor Skills Algorithm
 Based on research showing motor skills have exceptional long-term retention:
@@ -192,13 +203,21 @@ The skill extraction uses pattern matching for common action verbs and procedura
 
 ## Future Enhancements
 
-- [ ] Persistent storage (SQLite/PostgreSQL)
-- [ ] User authentication and multi-user support
-- [ ] Advanced NLP using LLM APIs
-- [ ] Export procedures to various formats
-- [ ] Mobile app integration
-- [ ] Analytics and learning insights
-- [ ] Collaborative procedure sharing
+### Core Features
+- [ ] **Procedure Storage**: Implement `save_procedure` tool with in-memory storage
+- [ ] **Review System**: Add `get_review_queue`, `mark_reviewed`, and `delay_review` tools
+- [ ] **Spaced Repetition**: Implement motor and cognitive algorithms with scheduling
+- [ ] **MCP Resources**: Add `procedures://list` and `procedures://{id}` resources
+
+### Extended Features
+- [ ] **Persistent Storage**: Replace in-memory storage with SQLite/PostgreSQL
+- [ ] **Web Interface**: Create functional client for procedure management
+- [ ] **User Authentication**: Multi-user support with authentication
+- [ ] **Advanced NLP**: LLM-based skill extraction improvements
+- [ ] **Export Options**: Export procedures to various formats
+- [ ] **Mobile Integration**: Mobile app support
+- [ ] **Analytics**: Learning insights and progress tracking
+- [ ] **Collaboration**: Procedure sharing between users
 
 ## Contributing
 
